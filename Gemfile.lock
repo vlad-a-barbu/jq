@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    damerau-levenshtein (1.3.3)
+
+PLATFORMS
+  x64-mingw-ucrt
+
+DEPENDENCIES
+  damerau-levenshtein (~> 1.3)
+
+BUNDLED WITH
+   2.6.2
