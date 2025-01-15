@@ -36,15 +36,17 @@ else
 end
 
 ptr = json(path)
-key = '*'
+key = nil
 query.each do |q|
+  if q == '.' then
+      key = nil
+      break
+  end
   res = ptr.query(q)
   break if res[:value].nil?
   key = res[:key]
   ptr = res[:value]
 end
 
-res = {}
-res[key] = ptr
+res = key.nil? ? ptr : Hash[key, ptr]
 puts JSON.pretty_generate(res)
-
