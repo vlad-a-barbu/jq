@@ -26,7 +26,7 @@ when arg1 == 'db'
   if query[1] == "delete"
     db.delete(query[0])
   elsif json(query[1])
-    db[query[0]] = nil
+    db[query[0]] = query[1]
   end
   File.write(dbpath, db.to_json())
   puts JSON.pretty_generate(db)
